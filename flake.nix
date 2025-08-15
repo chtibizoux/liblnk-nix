@@ -35,7 +35,7 @@
           nativeBuildInputs = commonNativeBuildInputs;
           buildInputs       = commonBuildInputs;
 
-          preConfigure = ''
+          preAutoreconf = ''
             ./synclibs.sh
           '';
 
