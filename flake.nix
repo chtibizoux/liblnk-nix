@@ -25,7 +25,7 @@
           src = liblnk-src;
 
           nativeBuildInputs = with pkgs; [
-            autoconf automake libtool pkg-config gettext
+            git autoconf automake libtool pkg-config gettext
           ];
 
           buildInputs = with pkgs; [
