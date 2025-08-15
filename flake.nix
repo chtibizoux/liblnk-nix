@@ -35,10 +35,6 @@
           nativeBuildInputs = commonNativeBuildInputs;
           buildInputs       = commonBuildInputs;
 
-          preAutoreconf = ''
-            ./synclibs.sh
-          '';
-
           meta = with lib; {
             description = "Library and tools for parsing Windows .LNK (shell shortcut) files";
             homepage    = "https://github.com/libyal/liblnk";
