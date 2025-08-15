@@ -1,0 +1,10 @@
+# Nix
+result
+.nix-*
+.direnv
+.envrc
+
+# OS/editor cruft
+.DS_Store
+.idea/
+.vscode/

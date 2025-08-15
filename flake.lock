@@ -1,0 +1,333 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "libbfio-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728966173,
+        "narHash": "sha256-mlANvaAsoINyRgLdGPaLaZOHwo61QiMM4WgR+iMsgXU=",
+        "owner": "libyal",
+        "repo": "libbfio",
+        "rev": "5b07d0701d4a19136ca0e84f91004e8592104ed7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libbfio",
+        "type": "github"
+      }
+    },
+    "libcdata-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728965816,
+        "narHash": "sha256-O3GEttFmP/fKq1mXYAtSxdQb6Qw5dN73R5jPq/noYC8=",
+        "owner": "libyal",
+        "repo": "libcdata",
+        "rev": "0bcf88b472719188f570efb38ed7b27520e63b1a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libcdata",
+        "type": "github"
+      }
+    },
+    "libcerror-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728799671,
+        "narHash": "sha256-DQaW1pLMoI9ygjdXyV3bOI1alCDFVPy1pOvxlqLnB+E=",
+        "owner": "libyal",
+        "repo": "libcerror",
+        "rev": "0f0d145fe63f2769ceac76d5425a0bb10d5e304f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libcerror",
+        "type": "github"
+      }
+    },
+    "libcfile-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726547187,
+        "narHash": "sha256-FRjClhS8Pd9V++6XUPMecFgTRg7ZB0SjTdkELcAvyw0=",
+        "owner": "libyal",
+        "repo": "libcfile",
+        "rev": "c572b325ea393ad6a7508fbf5d1c3f247994ed3c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libcfile",
+        "type": "github"
+      }
+    },
+    "libclocale-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726633483,
+        "narHash": "sha256-cJprSrJ3R09mubTplY+1LxEW6HlYUNNLae0noS1XZfM=",
+        "owner": "libyal",
+        "repo": "libclocale",
+        "rev": "1cf15c1c1e9c10e0b44da3c3cd68f582367ec084",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libclocale",
+        "type": "github"
+      }
+    },
+    "libcnotify-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726714233,
+        "narHash": "sha256-A2eMrqroXe/Uslo5XjQ3sBQHTrS4R51gd7cBfFiUkws=",
+        "owner": "libyal",
+        "repo": "libcnotify",
+        "rev": "d6006204ebe8c462b4763708346295556c82ad7a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libcnotify",
+        "type": "github"
+      }
+    },
+    "libcpath-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726800017,
+        "narHash": "sha256-rIEruA0Wq2lsW3aDG9Fz+9QwQDep54rboAXDXNUR3Fs=",
+        "owner": "libyal",
+        "repo": "libcpath",
+        "rev": "bcd821042bedbc9cd3a226e765c303797a50c066",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libcpath",
+        "type": "github"
+      }
+    },
+    "libcsplit-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726893432,
+        "narHash": "sha256-AMptOUazgbK2+/UJjPOAaF+GwV9PLLpqRGdRZ6XpZ2g=",
+        "owner": "libyal",
+        "repo": "libcsplit",
+        "rev": "617061b35514fcf0b1e4d31913f80d99aa75a136",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libcsplit",
+        "type": "github"
+      }
+    },
+    "libcthreads-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728877590,
+        "narHash": "sha256-+m7lmvzlhUhtcK8HLoZn2JzDTxsLZAy7gPghLj96rBE=",
+        "owner": "libyal",
+        "repo": "libcthreads",
+        "rev": "96bccf105fd03218f01419663facb6f0e8ef7a45",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libcthreads",
+        "type": "github"
+      }
+    },
+    "libfdatetime-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1734200887,
+        "narHash": "sha256-mqoZk4OarXEkte7MjRO2DxSGmDNB9GGjpq3B/SeUkus=",
+        "owner": "libyal",
+        "repo": "libfdatetime",
+        "rev": "f1a852adcbbf1d54893c3b8d6d3e5dadf9f433f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libfdatetime",
+        "type": "github"
+      }
+    },
+    "libfguid-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1716033740,
+        "narHash": "sha256-vBazbO7vkH8R2yzMp4MfQ1e+MBsXWs+LwlF8BtHGL0k=",
+        "owner": "libyal",
+        "repo": "libfguid",
+        "rev": "89513352efdf36b42b2b8b03c6e25fd022e5b301",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libfguid",
+        "type": "github"
+      }
+    },
+    "libfole-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1716262870,
+        "narHash": "sha256-+xa+mxnrvEL/qyBwQej0IPmctuHjL/YLJ5fvwmVe0xM=",
+        "owner": "libyal",
+        "repo": "libfole",
+        "rev": "c6dbb26a2f2a531cd4d1101bbffa88cd110e3f90",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libfole",
+        "type": "github"
+      }
+    },
+    "libfwps-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1721101900,
+        "narHash": "sha256-LzC4r76jNX3It6WmQ3CzGsVBahriTt//mcNQy3Iohb0=",
+        "owner": "libyal",
+        "repo": "libfwps",
+        "rev": "5b86175d8d729c17c30874c5881ee7fedeb748e0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libfwps",
+        "type": "github"
+      }
+    },
+    "libfwsi-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1721187169,
+        "narHash": "sha256-w7AVPYBtQj5u4wZ+H6ZYFfhNWHvLyuSM42J3pT6UWK8=",
+        "owner": "libyal",
+        "repo": "libfwsi",
+        "rev": "3c6c44da191a2903b6a94c9b046d8d28a582c7e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libfwsi",
+        "type": "github"
+      }
+    },
+    "liblnk-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728966409,
+        "narHash": "sha256-J2nooBVD8l/AIZvESHSofcVrU+V4fhwu9qF5B56i698=",
+        "owner": "libyal",
+        "repo": "liblnk",
+        "rev": "00e03ad49fd9610d2941388ebab08ff2dc8affde",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "liblnk",
+        "type": "github"
+      }
+    },
+    "libuna-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1715572810,
+        "narHash": "sha256-nJRuKdpm6+IQenn/2rH2cRrX5vxipK3MdjqcbxtEAyY=",
+        "owner": "libyal",
+        "repo": "libuna",
+        "rev": "eef28192a5906305458e67f434d93ce896b01c17",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libyal",
+        "repo": "libuna",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1735563628,
+        "narHash": "sha256-OnSAY7XDSx7CtDoqNh8jwVwh4xNL/2HaJxGjryLWzX8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b134951a4c9f3c995fd7be05f3243f8ecd65d798",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "libbfio-src": "libbfio-src",
+        "libcdata-src": "libcdata-src",
+        "libcerror-src": "libcerror-src",
+        "libcfile-src": "libcfile-src",
+        "libclocale-src": "libclocale-src",
+        "libcnotify-src": "libcnotify-src",
+        "libcpath-src": "libcpath-src",
+        "libcsplit-src": "libcsplit-src",
+        "libcthreads-src": "libcthreads-src",
+        "libfdatetime-src": "libfdatetime-src",
+        "libfguid-src": "libfguid-src",
+        "libfole-src": "libfole-src",
+        "libfwps-src": "libfwps-src",
+        "libfwsi-src": "libfwsi-src",
+        "liblnk-src": "liblnk-src",
+        "libuna-src": "libuna-src",
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
