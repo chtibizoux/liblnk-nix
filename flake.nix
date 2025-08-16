@@ -53,9 +53,7 @@
           buildInputs       = commonBuildInputs;
 
           preAutoreconf = ''
-            # Instead of running ./synclibs.sh which requires network access,
-            # copy the libyal dependencies from the flake inputs
-            
+            # Set up libyal dependencies from Nix flake inputs
             # Map of library names to their source inputs
             declare -A lib_sources=(
               ["libbfio"]="${libbfio-src}"
@@ -75,57 +73,30 @@
               ["libuna"]="${libuna-src}"
             )
 
+            # Create symlinks to the dependency sources for synclibs.sh to use
             for lib in "''${!lib_sources[@]}"; do
               lib_src="''${lib_sources[$lib]}"
-              echo "Setting up $lib from $lib_src"
+              echo "Preparing $lib from $lib_src for synclibs.sh"
               
-              # Create the library directory
-              mkdir -p "$lib"
-              
-              # Copy the library source files
-              if [ -d "$lib_src/$lib" ]; then
-                cp "$lib_src/$lib"/*.[chly] "$lib/" 2>/dev/null || true
-                cp "$lib_src/$lib/Makefile.am" "$lib/" 2>/dev/null || true
-              fi
-              
-              # Get version from configure.ac
-              if [ -f "$lib_src/configure.ac" ]; then
-                lib_version=$(grep -A 2 AC_INIT "$lib_src/configure.ac" | tail -n 1 | sed 's/^[[:space:]]*\[\([0-9]*\)\],[[:space:]]*$/\1/' 2>/dev/null || echo "1")
-              else
-                lib_version="1"
-              fi
-              
-              # Create the definitions header if template exists
-              if [ -f "$lib_src/$lib/''${lib}_definitions.h.in" ]; then
-                sed "s/@VERSION@/$lib_version/" "$lib_src/$lib/''${lib}_definitions.h.in" > "$lib/''${lib}_definitions.h"
-              fi
-              
-              # Apply the same transformations that synclibs.sh would do to Makefile.am
-              if [ -f "$lib/Makefile.am" ]; then
-                lib_upper=$(echo "$lib" | tr '[a-z]' '[A-Z]')
-                
-                # Add the conditional wrapper for local builds
-                sed -i "1i\\
-if HAVE_LOCAL_$lib_upper" "$lib/Makefile.am"
-                echo "endif" >> "$lib/Makefile.am"
-                
-                # Change lib_LTLIBRARIES to noinst_LTLIBRARIES 
-                sed -i 's/lib_LTLIBRARIES/noinst_LTLIBRARIES/' "$lib/Makefile.am"
-                
-                # Remove the main library source file (it would conflict)
-                sed -i "/''${lib}\.c/d" "$lib/Makefile.am"
-                
-                # Remove EXTRA_DIST sections that reference external files
-                sed -i '/EXTRA_DIST = /,/^$/d' "$lib/Makefile.am"
-                
-                # Remove references to .rc files and other Windows-specific files
-                sed -i "/''${lib}\\.rc/d" "$lib/Makefile.am"
-                sed -i "/''${lib}_definitions\\.h\\.in/d" "$lib/Makefile.am"
-              fi
-              
-              # Remove the main library source file if it exists (to avoid conflicts)
-              rm -f "$lib/$lib.c"
+              # Create a temporary directory that synclibs.sh will expect
+              ln -sf "$lib_src" "$lib-$$"
             done
+            
+            # Create a modified synclibs.sh that skips git operations but keeps all transformation logic
+            cp synclibs.sh synclibs-nix.sh
+            
+            # Replace git clone with a no-op comment
+            sed -i 's/git clone --quiet ${GIT_URL} ${LOCAL_LIB}-$$;/# Git clone replaced - using Nix flake input/' synclibs-nix.sh
+            
+            # Remove git fetch and git checkout commands 
+            sed -i '/cd ${LOCAL_LIB}-$$ && git fetch/d' synclibs-nix.sh
+            sed -i '/cd ${LOCAL_LIB}-$$ && git checkout/d' synclibs-nix.sh
+            
+            # Replace version detection with a simple fallback since we'll get latest
+            sed -i 's/LATEST_TAG=`cd ${LOCAL_LIB}-$$ && git describe --tags --abbrev=0`;/LATEST_TAG=""/' synclibs-nix.sh
+            
+            # Run the modified script
+            ./synclibs-nix.sh
           '';
 
           meta = with lib; {
