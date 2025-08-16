@@ -73,13 +73,15 @@
               ["libuna"]="${libuna-src}"
             )
 
-            # Create symlinks to the dependency sources for synclibs.sh to use
+            # Copy dependency sources to writable temporary directories for synclibs.sh to use
             for lib in "''${!lib_sources[@]}"; do
               lib_src="''${lib_sources[$lib]}"
-              echo "Preparing $lib from $lib_src for synclibs.sh"
+              echo "Setting up $lib from $lib_src"
               
-              # Create a temporary directory that synclibs.sh will expect
-              ln -sf "$lib_src" "$lib-$$"
+              # Copy the source to a writable temporary directory that synclibs.sh expects
+              cp -r "$lib_src" "$lib-$$"
+              # Make the copied files writable since Nix store files are read-only
+              chmod -R u+w "$lib-$$"
             done
             
             # Create a modified synclibs.sh that skips git operations but keeps all transformation logic
